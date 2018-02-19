@@ -4,10 +4,11 @@ abstract public class Synth {
 	double frequency;
 	double time;
 	double sampleRate;
+	double output;
 
 	public double get() {
 		
-		return frequency;
+		return output;
 	}
 
 	public void tick() {
