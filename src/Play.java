@@ -37,7 +37,8 @@ public class Play {
 		list.add(new Sine(311));
 		list.add(new Sine(370));
 		list.add(new Sine(440));
-		list.add(new SawTooth(20));
+		list.add(new SawTooth(230));
+		list.add(new SawTooth(430));
 		/* Set up to play audio */
 		AudioFormat format = new AudioFormat((float) sampleRate, 16, 1, true, false);
 		DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);
