@@ -1,24 +1,17 @@
 
-public class Sine {
+public class Sine extends Synth {
 
-	int sampleRate;
-	private double time;
+	public Sine(int frequency) {
 
-	public Sine(int sampleRate) {
-
-		this.sampleRate = sampleRate;
+		this.frequency = frequency;
 
 	}
 
 	public double get() {
 
-		return Math.sin(2 * Math.PI * 450 * time);
+		frequency = Math.sin(2 * Math.PI * 450 * time);
 
-	}
-
-	public void tick() {
-
-		time += 1.0 / sampleRate;
+		return frequency;
 
 	}
 

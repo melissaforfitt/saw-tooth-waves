@@ -11,12 +11,12 @@ public class Play {
 	/** sample rate in Hz */
 	private final int sampleRate = 44100;
 	private SourceDataLine line;
-	ArrayList<Sine> sineList;
+	ArrayList<Synth> list;
 
 	public double get() {
 
 		double total = 0;
-		for (Sine s : sineList) {
+		for (Synth s : list) {
 			total = total + s.get();
 		}
 
@@ -25,19 +25,19 @@ public class Play {
 
 	public void tick() {
 
-		for (Sine s : sineList) {
+		for (Synth s : list) {
 			s.tick();
 		}
 	}
 
 	public Play() throws LineUnavailableException {
 		// Create list of sine values
-		sineList = new ArrayList<Sine>();
-		sineList.add(new Sine(261));
-		sineList.add(new Sine(311));
-		sineList.add(new Sine(370));
-		sineList.add(new Sine(440));
-		sineList.get(1);
+		list = new ArrayList<Synth>();
+		list.add(new Sine(261));
+		list.add(new Sine(311));
+		list.add(new Sine(370));
+		list.add(new Sine(440));
+		list.add(new SawTooth(20, 20));
 		/* Set up to play audio */
 		AudioFormat format = new AudioFormat((float) sampleRate, 16, 1, true, false);
 		DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);
