@@ -6,15 +6,12 @@ abstract public class Synth {
 	double sampleRate;
 	double output;
 
-	public double get() {
-		
-		return output;
-	}
+	abstract public double get();
 
 	public void tick() {
 
 		time += 1.0 / sampleRate;
-		
+
 	}
 
 }
