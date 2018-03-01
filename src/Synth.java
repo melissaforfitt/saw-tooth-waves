@@ -1,9 +1,9 @@
 
 abstract public class Synth {
-
+	
 	double frequency;
 	double time;
-	double sampleRate;
+	double sampleRate = 44100;
 	double output;
 
 	abstract public double get();

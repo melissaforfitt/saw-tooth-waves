@@ -12,12 +12,13 @@ public class Play {
 	private final int sampleRate = 44100;
 	private SourceDataLine line;
 	ArrayList<Synth> list;
-	double total = 0;
 
 	public double get() {
 
+		double total = 0;
 		for (Synth s : list) {
 			total = total + s.get();
+			System.out.println(s.get());
 		}
 
 		return total;
@@ -77,7 +78,7 @@ public class Play {
 
 	public static void main(String[] args) throws LineUnavailableException {
 		Play p = new Play();
-		p.run(5);
+		p.run(1);
 		p.close();
 	}
 }

@@ -8,10 +8,9 @@ public class SawTooth extends Synth {
 	}
 
 	public double get() {
-		
-		output = 2 * ((time * frequency) - Math.floor(0.5 + time * frequency));
 
-		return output;
+		return 2 * ((time * frequency) - Math.floor(0.5 + time * frequency));
+
 	}
 
 }
